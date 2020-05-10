@@ -7,7 +7,6 @@ export class MapService {
 
   constructor(private db: AngularFirestore) { }
 
-
   async getMarkers() {
     return this.db.collection('/markers').valueChanges();
   }

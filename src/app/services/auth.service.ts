@@ -2,10 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { User } from '../models/user.model';
-import { Observable, of } from 'rxjs';
-import { switchMap, first } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { shareReplay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +15,9 @@ export class AuthService {
               private router: Router,
               private afs: AngularFirestore) {
 
-              this.afAuth.authState.subscribe((auth) => {
-                this.authState = auth;
+              this.afAuth.onAuthStateChanged(firebaseUser => {
+                this.authState = firebaseUser;
+                this.updateUserData();
               });
   }
 
