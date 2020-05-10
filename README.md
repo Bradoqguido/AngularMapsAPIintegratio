@@ -1,5 +1,13 @@
-# AngularMapsAPIintegration
+# Angular MapBox API integration
 
+# What you need to do first?
+## MapBox API Key
+You need to get a MapBox API Key first and place the key on environment variables.
+
+## Firebase project configuration
+This project use the firebase firestore to update data in realtime, you can change this to be locale, if you want.
+
+# Informations to run locale this project are below
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
 
 ## Development server

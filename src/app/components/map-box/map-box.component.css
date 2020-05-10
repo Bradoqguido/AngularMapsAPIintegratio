@@ -1,0 +1,17 @@
+.map {
+  width: 80%;
+  height: 80vh;
+}
+
+div {
+  margin: 8px;
+}
+
+.markList {
+  overflow: scroll;
+  max-height: 60vh;
+}
+
+button {
+  margin: 8px;
+}

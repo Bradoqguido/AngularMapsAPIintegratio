@@ -1,0 +1,28 @@
+<div>
+  <div style="width: 300px; float: left;">
+    <div style="text-align: center;">
+      <h1>Markers</h1>
+
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter a new marker name</mat-label>
+          <input matInput [(ngModel)]="message" placeholder="Marker name" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </form>
+    </div>
+
+    <div class="markList">
+      <mat-list role="list" *ngFor="let marker of markers | async">
+        <mat-list-item role="listitem">
+          <button mat-flat-button color="primary" (click)="flyTo(marker)">{{ marker.properties.message }}</button>
+          <button mat-flat-button color="warn" (click)="removeMarker(marker)">Delete</button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+
+  </div>
+
+  <div style="margin-left: 250px;">
+    <div class="map" id="map"></div>
+  </div>
+</div>
